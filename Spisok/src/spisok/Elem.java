@@ -12,4 +12,5 @@ public class Elem {
 
     Elem linc;
     int value;
+    
 }

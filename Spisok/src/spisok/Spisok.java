@@ -35,5 +35,6 @@ public class Spisok {
             current = current.linc;
         }
         return current.value;
+        
     }
 }
