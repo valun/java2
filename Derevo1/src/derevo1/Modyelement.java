@@ -4,40 +4,21 @@
  */
 package derevo1;
 
-
-
 /**
  *
  * @author valtut
  */
-public class Addelem {
+public class Modyelement {
 
     Elem root;
     Elem current;
     Elem before;
 
-    public void addFirst(int value) {
+    public void addNewElem(int value) {
         if (root == null) {
             root = new Elem();
             root.value = value;
         }
-    }
-
-    public void findElem(int value) {
-        while (value > current.value) {
-            if (current.right != null) {
-                current = current.right;
-                while (value < current.value) {
-                    if (current.left != null) {
-                        current = current.left;
-                    }
-                }
-            }
-        }
-    }
-
-    public void addNewElem(int value) {
-
         current = root;
         while (value != current.value) {
             while (value > current.value) {
@@ -64,53 +45,51 @@ public class Addelem {
     }
 
     public void delElem(int value) {
-
+        current = root;
         while (value != current.value) {
 
-            while (value > current.value) {
-                if (current.right != null) {
-                    before = current;
-                    current = current.right;
-                } else {
-                    before = current;
-                    current.value = value;
-                }
+            if (value < current.value) {
+                before = current;
+                current = current.left;
+            } else if (value < current.value && current.left == null) {
+                System.out.println("Указанного числа в дереве не существует");
             }
 
-            while (value < current.value) {
-                if (current.left != null) {
-                    before = current;
-                    current = current.left;
-                } else {
-                    before = current;
-                    current = current.right;
-                }
+
+            if (value > current.value) {
+                before = current;
+                current = current.right;
+            } else if (current.right == null) {
+                System.out.println("Указанного числа в дереве не существует");
             }
         }
-        if (value < root.value) {
-            before.left = current.left;
+
+        if (value == current.value && before.value < current.value) {
+            before.right = current.right;
+
             before = current;
-            current = current.left;
-            current.right = before.right;
-        } else {
+            current = current.right;
+            while (current.left != null) {
+                current = current.left;
+            }
+            current.left = before.left;
+        } else if (value == current.value && before.value > current.value) {
+            before.left = current.right;
+            //current = current.left;
+            while (before.left != null) {
+                before = before.left;
+            }
+            before.left = current.left;
         }
-
-
-
     }
 
     public int showDerevoL() {
         current = root;
-
-
         while (current.left != null) {
             before = current;
             current = current.left;
             System.out.println(current.value);
         }
-
-
-
         return current.value;
     }
 }

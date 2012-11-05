@@ -1,6 +1,6 @@
 package derevo;
 
-import derevo1.Addelem;
+import derevo1.Modyelement;
 
 /**
  *
@@ -12,7 +12,7 @@ public class Derevo1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Addelem derevo = new Addelem();
+        Modyelement derevo = new Modyelement();
         derevo.addFirst(5);
         derevo.addNewElem(3);
         derevo.addNewElem(8);
