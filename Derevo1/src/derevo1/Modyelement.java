@@ -83,13 +83,10 @@ public class Modyelement {
         }
     }
 
-    public int showDerevoL() {
+    public Elem showDerevo() {
         current = root;
-        while (current.left != null) {
-            before = current;
-            current = current.left;
-            System.out.println(current.value);
-        }
-        return current.value;
+        RecursShow show = new RecursShow();
+        return show.showNode(root);
+        
     }
 }

@@ -1,4 +1,4 @@
-package derevo;
+package derevo1;
 
 import derevo1.Modyelement;
 
@@ -13,13 +13,13 @@ public class Derevo1 {
      */
     public static void main(String[] args) {
         Modyelement derevo = new Modyelement();
-        derevo.addFirst(5);
+        derevo.addNewElem(5);
         derevo.addNewElem(3);
         derevo.addNewElem(8);
         derevo.addNewElem(6);
         derevo.addNewElem(2);
         derevo.addNewElem(1);
-        derevo.showDerevoL();
+        derevo.showDerevo();
         // TODO code application logic here
     }
 }
