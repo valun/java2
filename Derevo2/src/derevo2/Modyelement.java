@@ -83,10 +83,14 @@ public class Modyelement {
         }
     }
 
-    public Elem showDerevo() {
-        current = root;
-        RecursShow show = new RecursShow();
-        return show.showNode(root);
-
+    public void showNode(Elem n) {
+        if(n != null){
+            System.out.println(n.value);
+            showNode(n.left);
+            showNode(n.right);
+        }
+    }
+    public void showTree(){
+        showNode(root);
     }
 }
