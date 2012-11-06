@@ -1,6 +1,6 @@
 package derevo1;
 
-import derevo1.Modyelement;
+import derevo1.NodesTree;
 
 /**
  *
@@ -12,14 +12,19 @@ public class Derevo1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Modyelement derevo = new Modyelement();
-        derevo.addNewElem(5);
-        derevo.addNewElem(3);
-        derevo.addNewElem(8);
-        derevo.addNewElem(6);
-        derevo.addNewElem(2);
-        derevo.addNewElem(1);
-        derevo.showDerevo();
+        NodesTree derevo = new NodesTree();
+        
+        derevo.addElement(10);
+        derevo.addElement(4);
+        derevo.addElement(18);
+        derevo.addElement(16);
+        derevo.addElement(6);
+        derevo.addElement(3);
+        derevo.addElement(5);
+        derevo.addElement(7);
+        derevo.delElement(6);
+        derevo.showTree();
+        
         // TODO code application logic here
     }
 }
