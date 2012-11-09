@@ -4,10 +4,7 @@
  */
 package exp;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  *
@@ -15,6 +12,7 @@ import java.util.Scanner;
  */
 public class Elem {
 
+    List<Elem> list = new ArrayList<Elem>();
     Elem e;
     int data;
     int sum = 0;
@@ -29,14 +27,11 @@ public class Elem {
         e.sum = scan.nextInt();
         System.out.print("Введите описание ");
         e.des = scan.next();
-        addToList(e);
-
+        addToListArray(e);
     }
-    
-    List<Elem> list = new ArrayList<Elem>();
-    public void addToList(Elem e){
+
+    public void addToListArray(Elem e) {
         list.add(e);
-            
     }
 
     public void showEle(Elem e) {
@@ -46,7 +41,15 @@ public class Elem {
     }
 
     
-    void show(List<Elem> list) {
-        System.out.println(list);
+    public String toString(){
+    
+        return String.valueOf(data) + String.valueOf(sum) + String.valueOf(des);
+    
+    }
+    
+    public void show(List list) {
+        for (Object e : list ){
+            System.out.println(list.toString());
+        }
     }
 }
