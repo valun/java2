@@ -16,9 +16,10 @@ public class Exp {
     public static void main(String[] args) {
 
 
-        Elem e = new Elem();
-        e.addExp(e);
-        e.show(e.list);
+        Elem ee = new Elem();
+        ee.addExp(ee);
+        ee.addExp(ee);
+        ee.show(ee.list);
 
     }
 }

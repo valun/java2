@@ -4,25 +4,23 @@
  */
 package exp;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
-/**
- *
- * @author valtut
- */
 public class Elem {
 
-    List<Elem> list = new ArrayList<Elem>();
     Elem e;
-    int data;
+    List<Elem> list = new ArrayList<Elem>();
+    String data;
     int sum = 0;
     String des = "";
+    SimpleDateFormat form = new SimpleDateFormat("mm/dd/yyyy");
+    Scanner scan = new Scanner(System.in);
 
-    public void addExp(Elem e) {
-
-        Scanner scan = new Scanner(System.in);
+    public void addExp(Elem ee) {
+        Elem e = new Elem();
         System.out.print("Введите дату ");
-        e.data = scan.nextInt();
+        e.data = scan.next();
         System.out.print("Введите сумму ");
         e.sum = scan.nextInt();
         System.out.print("Введите описание ");
@@ -31,25 +29,20 @@ public class Elem {
     }
 
     public void addToListArray(Elem e) {
+
         list.add(e);
     }
 
-    public void showEle(Elem e) {
-        System.out.println(e.data);
-        System.out.println(e.sum);
-        System.out.println(e.des);
+    @Override
+    public String toString() {
+        return String.valueOf(data) + " " + String.valueOf(sum) + " " + String.valueOf(des) + " ";
     }
 
-    
-    public String toString(){
-    
-        return String.valueOf(data) + String.valueOf(sum) + String.valueOf(des);
-    
-    }
-    
     public void show(List list) {
-        for (Object e : list ){
+        // SimpleDateFormat form = new SimpleDateFormat("mm/dd/yyyy");
+       // for (Object e : list) {
             System.out.println(list.toString());
+            // System.out.println("");
         }
     }
-}
+
