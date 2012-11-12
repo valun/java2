@@ -9,13 +9,16 @@ package expenses;
  * @author valtut
  */
 public class Expenses {
-    
-    public static void main(String[] arg){
-    
-    Elem ee = new Elem();
+
+    public static void main(String[] arg) throws Exception {
+
+        Elem ee = new Elem();
         ee.addExp(ee);
-      //  ee.addExp(ee);
-        ee.show(ee.list);
+        //  ee.addExp(ee);
+        //ee.show(ee.list);
+        JobWithFiles j = new JobWithFiles();
+        j.wriiteToFile();
+
+
     }
-    
 }
