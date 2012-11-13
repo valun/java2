@@ -12,12 +12,12 @@ public class Expenses {
 
     public static void main(String[] arg) throws Exception {
 
-        Elem ee = new Elem();
-        ee.addExp(ee);
+        Elem e = new Elem();
+        e.createExp(e);
         //  ee.addExp(ee);
-        //ee.show(ee.list);
-        JobWithFiles j = new JobWithFiles();
-        j.wriiteToFile();
+       // e.show(e.list);
+       // j.wriiteToFile(ee);
+        //j.readWithFile(ee.toString());
 
 
     }

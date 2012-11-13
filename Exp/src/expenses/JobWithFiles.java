@@ -4,10 +4,7 @@
  */
 package expenses;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
+import java.io.*;
 
 /**
  *
@@ -15,13 +12,16 @@ import java.util.ArrayList;
  */
 public class JobWithFiles {
 
+    String fileName = "c:\\test.txt";
+
     public void wriiteToFile() throws Exception {
 
         String bytesToWrite = "42543";
-        String fileName = "c:\\test.txt";
         byte[] bytesReaded = bytesToWrite.getBytes();
+        //bytesReaded = bytesToWrite.getBytes();
 
         try {
+
             FileOutputStream outFile = new FileOutputStream(fileName);
             System.out.println("File is open to write");
             // записать массив
@@ -54,6 +54,14 @@ public class JobWithFiles {
 
     }
 
-    public void readWithFile() {
+    public void readWithFile(String charset)
+            throws FileNotFoundException, IOException {
+
+        InputStream is = new BufferedInputStream(new FileInputStream(fileName));
+        byte[] data = new byte[is.available()];
+        is.read(data);
+        is.close();
+        System.out.println("");
+        //return new String(data, charset);
     }
 }
