@@ -4,19 +4,18 @@
  */
 package expenses;
 
-import com.sun.beans.decoder.ValueObject;
+
 import java.io.*;
 import java.util.*;
 
 public class Elem {
 
     Elem e;
-    List<Elem> list = new ArrayList<Elem>();
+    List<Elem> list;// = new ArrayList<Elem>();
     String fileName = "c:\\test.txt";
     String data, sum;
     String des = "";
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-    FileWriter writer = new FileWriter(fileName);
 
     public void createExp(Elem e) throws IOException {
 
@@ -31,15 +30,10 @@ public class Elem {
     }
 
     public void writeToFile(Elem e) throws IOException {
-        
+        FileWriter writer = new FileWriter(fileName, true);
         BufferedWriter buffered = new BufferedWriter(writer);
-        buffered.append('\n');
-        buffered.append(e.data + " ");
-        buffered.append(e.sum + " ");
-        buffered.append(e.des + " ");
+        buffered.append(e.data + " " + e.sum + " " + e.des + '\n');
         buffered.flush();
-        buffered.append('\n');
-
     }
 
     public void addToListArray(Elem e) {

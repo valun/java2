@@ -13,6 +13,7 @@ public class Expenses {
     public static void main(String[] arg) throws Exception {
 
         Elem e = new Elem();
+        
         e.createExp(e);
         e.createExp(e);
         //  ee.addExp(ee);
