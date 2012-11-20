@@ -30,11 +30,23 @@ public class Elem {
     }
 
     public void writeToFile(Elem e) throws IOException {
-        FileWriter writer = new FileWriter(fileName, true);
-        BufferedWriter buffered = new BufferedWriter(writer);
-        buffered.append(e.data + " " + e.sum + " " + e.des + '\n');
-        buffered.flush();
+        try {
+            FileWriter writer = new FileWriter(fileName, true);
+            BufferedWriter buffered = new BufferedWriter(writer);
+            buffered.append(e.data + " " + e.sum + " " + e.des + '\n');
+            buffered.flush();
+        } catch (IOException a) {
+            System.out.println("");
+        }
     }
+    
+    
+     public void readeToFile(){
+     
+     
+     }
+     
+     
 
     public void addToListArray(Elem e) {
 
