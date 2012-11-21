@@ -4,6 +4,7 @@
  */
 package expenses;
 
+
 /**
  *
  * @author valtut
@@ -13,10 +14,10 @@ public class Expenses {
     public static void main(String[] arg) throws Exception {
 
         Elem e = new Elem();
-        
-       // e.createExp(e);
-       // e.createExp(e);
-        e.readeFile();
+        ReadeFromFile f = new ReadeFromFile();
+          //e.createExp(e);
+  //      e.createExp(e);
+          f.readeFile(e);
         //  ee.addExp(ee);
        // e.show(e.list);
        // j.wriiteToFile(ee);
@@ -24,4 +25,6 @@ public class Expenses {
 
 
     }
+
+    
 }
