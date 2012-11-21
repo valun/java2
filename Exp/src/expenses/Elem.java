@@ -4,14 +4,13 @@
  */
 package expenses;
 
-
 import java.io.*;
 import java.util.*;
 
 public class Elem {
 
     Elem e;
-    List<Elem> list;// = new ArrayList<Elem>();
+    List<String> list = new ArrayList<String>();
     String fileName = "c:\\test.txt";
     String data, sum;
     String des = "";
@@ -25,7 +24,6 @@ public class Elem {
         e.sum = reader.readLine();
         System.out.print("Введите описание ");
         e.des = reader.readLine();
-        //System.out.println(e);
         writeToFile(e);
     }
 
@@ -39,18 +37,27 @@ public class Elem {
             System.out.println("");
         }
     }
-    
-    
-     public void readeToFile(){
-     
-     
-     }
-     
-     
 
-    public void addToListArray(Elem e) {
+    public void readeFile() throws Exception {
 
-        list.add(e);
+        try {
+            InputStreamReader isr =
+                    new InputStreamReader(new FileInputStream(fileName));
+            BufferedReader buff = new BufferedReader(isr);
+            StringBuffer strBuff = new StringBuffer();
+            String s;
+            while ((s = buff.readLine()) != null) {
+                strBuff.append(s);
+                list.add(s);
+            }
+            show(list);
+        } catch (IOException iOException) {
+        }
+    }
+
+
+    public void addToListArray(String stri) {
+        list.add(des);
     }
 
     @Override

@@ -14,8 +14,9 @@ public class Expenses {
 
         Elem e = new Elem();
         
-        e.createExp(e);
-        e.createExp(e);
+       // e.createExp(e);
+       // e.createExp(e);
+        e.readeFile();
         //  ee.addExp(ee);
        // e.show(e.list);
        // j.wriiteToFile(ee);
