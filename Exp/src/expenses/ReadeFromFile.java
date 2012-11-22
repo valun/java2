@@ -16,24 +16,30 @@ import java.util.List;
  * @author valtut
  */
 public class ReadeFromFile {
-    List<String> list = new ArrayList<String>();
-    WriteToFile w = new WriteToFile();
 
-    public void readeFile(Elem e) throws Exception {
+    WriteToFile w = new WriteToFile();
+    List<String> list = new ArrayList<String>();
+
+    public List readeFile(Elem e) throws Exception {
 
         try {
+
             InputStreamReader isr =
                     new InputStreamReader(new FileInputStream(w.fileName));
             BufferedReader buff = new BufferedReader(isr);
-            StringBuffer strBuff = new StringBuffer();
+            StringBuilder strBuff = new StringBuilder();
             String s;
+            int i = 0;
             while ((s = buff.readLine()) != null) {
+                i = i + 1;
                 strBuff.append(s);
-                list.add(s);
+                list.add(i + "." + s);
             }
             show(list);
         } catch (IOException iOException) {
+            System.out.println("Faila net !");
         }
+        return list;
     }
 
     public void show(List list) {

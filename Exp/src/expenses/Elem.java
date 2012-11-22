@@ -14,10 +14,10 @@ public class Elem {
     WriteToFile ww = new WriteToFile();
     String data, sum;
     String des = "";
-    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    
 
     public void createExp(Elem e) throws IOException {
-       
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Введите дату ");
         e.data = reader.readLine();
         System.out.print("Введите сумму ");
