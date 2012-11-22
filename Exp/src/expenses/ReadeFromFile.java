@@ -20,7 +20,7 @@ public class ReadeFromFile {
     WriteToFile w = new WriteToFile();
     List<String> list = new ArrayList<String>();
 
-    public List readeFile(Elem e) throws Exception {
+    public List readeFile() throws Exception {
 
         try {
 
@@ -43,7 +43,7 @@ public class ReadeFromFile {
     }
 
     public void show(List list) {
-        System.out.println("data     summa    des");
+        System.out.println("   data     summa    des");
         for (Object d : list) {
             System.out.println(d.toString());
         }

@@ -4,6 +4,8 @@
  */
 package expenses;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -18,43 +20,35 @@ public class Expenses {
         ReadeFromFile f = new ReadeFromFile();
         DelFromList del = new DelFromList();
         WriteToFile write = new WriteToFile();
+        CurrentAray curr = new CurrentAray();
         Scanner scan = new Scanner(System.in);
-        System.out.println("1 - Porsmotretj spisok" + "2 - Dobavitj v spisok "
-                + " Udalitj iz spiska");
+        while (true) {
+            System.out.println("1 - Porsmotretj spisok" + "2 - Dobavitj v spisok "
+                    + " Udalitj iz spiska");
 
-        int x = scan.nextInt();
+            int x = scan.nextInt();
 
-        switch (x) {
-            case 1:
-                f.readeFile(e);
-                break;
-            case 2:
-                e.createExp(e);
-                break;
-            case 3: 
-                System.out.println("Vibirite nomer pokupki: ");
-                x = scan.nextInt();
-                del.deleteFromList(e, x);
-                write.writeToFile(e);
-                f.readeFile(e);
-            case 4:
-                break;
+            switch (x) {
+                case 1:
+                    f.readeFile();
+                    break;
+                case 2:
+                    e.createExp(e);
+                    break;
+                case 3:
+                    System.out.println("Vibirite nomer pokupki: ");
+                    x = scan.nextInt();
+                    del.deleteFromList(x);
+                    break;
 
-            default:
+                case 4:
+                    System.out.println("Vihodim");
+                    //write.writeToFile(list);
+                    System.exit(0);
+                    break;
+
+                default:
+            }
         }
-
-
-
-
-
-        //e.createExp(e);
-        //      
-
-        //  ee.addExp(ee);
-        // e.show(e.list);
-        // j.wriiteToFile(ee);
-        //j.readWithFile(ee.toString());
-
-
     }
 }
