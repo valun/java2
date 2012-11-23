@@ -7,11 +7,8 @@ package expenses;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 
-/**
- *
- * @author valtut
- */
 public class WriteToFile {
 
     String fileName = "c:\\test.txt";
@@ -25,5 +22,19 @@ public class WriteToFile {
         } catch (IOException a) {
             System.out.println("");
         }
+    }
+
+    public void writeToFile(List list) throws IOException {
+        try {
+            FileWriter writer = new FileWriter(fileName);
+            BufferedWriter buffered = new BufferedWriter(writer);
+            for (Object s : list) {
+                buffered.append(s.toString() + '\n');
+            }
+            buffered.flush();
+        } catch (IOException a) {
+            System.out.println("");
+        }
+
     }
 }

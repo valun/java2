@@ -13,18 +13,14 @@ import java.util.List;
  */
 public class DelFromList {
 
-    
     ReadeFromFile read = new ReadeFromFile();
+    WriteToFile write = new WriteToFile();
 
-    public Elem deleteFromList(Elem e, int x) throws Exception {
-
-        read.readeFile(e);
-        read.list.remove(x);
-        System.out.println(e.data);
-    //    write.writeToFile(e);
-        return e;
-    
+    public void deleteFromList(int x) throws Exception {
+        List list = new ArrayList();
+        list = read.readeFile();
+        list.remove(x - 1);
+        System.out.println("");
+        write.writeToFile(list);
     }
-    
-    
 }

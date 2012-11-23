@@ -10,11 +10,9 @@ import java.util.*;
 public class Elem {
 
     Elem e;
-    //
-    WriteToFile ww = new WriteToFile();
     String data, sum;
     String des = "";
-    
+    WriteToFile ww = new WriteToFile();
 
     public void createExp(Elem e) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -27,10 +25,8 @@ public class Elem {
         ww.writeToFile(e);
     }
 
-/*    @Override
+    @Override
     public String toString() {
         return String.valueOf(data) + " " + String.valueOf(sum) + " " + String.valueOf(des) + " ";
-    }*/
-
-   
+    }
 }

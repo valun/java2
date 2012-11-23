@@ -18,10 +18,10 @@ import java.util.List;
 public class ReadeFromFile {
 
     WriteToFile w = new WriteToFile();
-    List<String> list = new ArrayList<String>();
+    List<String> list;
 
-    public List readeFile() throws Exception {
-
+    public List<String> readeFile() throws Exception {
+        list = new ArrayList();
         try {
 
             InputStreamReader isr =
@@ -29,11 +29,9 @@ public class ReadeFromFile {
             BufferedReader buff = new BufferedReader(isr);
             StringBuilder strBuff = new StringBuilder();
             String s;
-            int i = 0;
             while ((s = buff.readLine()) != null) {
-                i = i + 1;
                 strBuff.append(s);
-                list.add(i + "." + s);
+                list.add(s);
             }
             show(list);
         } catch (IOException iOException) {
@@ -44,8 +42,10 @@ public class ReadeFromFile {
 
     public void show(List list) {
         System.out.println("   data     summa    des");
+        int i = 0;
         for (Object d : list) {
-            System.out.println(d.toString());
+            i = i + 1;
+            System.out.println(i + "." + d.toString());
         }
     }
 }

@@ -20,11 +20,10 @@ public class Expenses {
         ReadeFromFile f = new ReadeFromFile();
         DelFromList del = new DelFromList();
         WriteToFile write = new WriteToFile();
-        CurrentAray curr = new CurrentAray();
         Scanner scan = new Scanner(System.in);
         while (true) {
-            System.out.println("1 - Porsmotretj spisok" + "2 - Dobavitj v spisok "
-                    + " Udalitj iz spiska");
+            
+            System.out.println('\n' + " 1 - View  2 - Add  3 - Del  4 - Exit" + '\n');
 
             int x = scan.nextInt();
 
@@ -40,10 +39,8 @@ public class Expenses {
                     x = scan.nextInt();
                     del.deleteFromList(x);
                     break;
-
                 case 4:
                     System.out.println("Vihodim");
-                    //write.writeToFile(list);
                     System.exit(0);
                     break;
 
