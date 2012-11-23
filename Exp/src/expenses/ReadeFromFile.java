@@ -33,14 +33,14 @@ public class ReadeFromFile {
                 strBuff.append(s);
                 list.add(s);
             }
-            show(list);
         } catch (IOException iOException) {
             System.out.println("Faila net !");
         }
         return list;
     }
 
-    public void show(List list) {
+    public void show() throws Exception {
+        readeFile();
         System.out.println("   data     summa    des");
         int i = 0;
         for (Object d : list) {

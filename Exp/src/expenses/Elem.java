@@ -9,12 +9,13 @@ import java.util.*;
 
 public class Elem {
 
-    Elem e;
+    
     String data, sum;
     String des = "";
     WriteToFile ww = new WriteToFile();
 
-    public void createExp(Elem e) throws IOException {
+    public void createExp() throws IOException {
+        Elem e = new Elem();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Введите дату ");
         e.data = reader.readLine();
