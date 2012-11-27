@@ -9,23 +9,44 @@ public class Check {
     Pole p = new Pole();
     Field f = new Field();
 
-    public void checkAlive(int x, int y) {
-
-        p.initPole();
-        int i = f.getX();
-        int j = f.getY();
-        int d = 0;
-        for (i = f.getX() - 1; i < f.getX() + 1; i++) {
-            for (j = f.getY() - 1; j < f.getX() + 1; j++) {
-                if (p.pole[i][j] && p.pole[f.getX()][f.getY()] == false) {
-                    d = d + 1;
+    private int check() {
+        int count = 0;
+        if (f.getX() != 0 || f.getX() != 10) {
+            for (int i = f.getX() - 1; i <= f.getX() + 1; i++) {
+                for (int j = f.getY() - 1; j <= f.getX() + 1; j++) {
+                    if (!(i == f.getX() && j == f.getY())) {
+                        if (p.pole[i][j]) {
+                            count = count + 1;
+                            System.out.println(count);
+                        }
+                    }
                 }
             }
         }
-        if (d == 3) {
+        return count;
+    }
+
+    public void check4() {
+
+        p.currentPole();
+        boolean current = p.pole[f.getX()][f.getY()];
+        f.getX();
+        f.getY();
+        int count = check();
+        if (count == 3) {
             p.pole[f.getX()][f.getY()] = true;
+            p.showPole();
+        } else {
+            if (count == 2 && current) {
+                p.pole[f.getX()][f.getY()] = true;
+            } else {
+                p.pole[f.getX()][f.getY()] = false;
+            }
         }
-        System.out.println("");
-        p.showPole();
+        if (count < 2) {
+            p.pole[f.getX()][f.getY()] = false;
+        } else if (count > 3) {
+            p.pole[f.getX()][f.getY()] = false;
+        }
     }
 }

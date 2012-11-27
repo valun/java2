@@ -16,8 +16,10 @@ public class Game {
     public static void main(String[] args) {
         Pole pole = new Pole();
         Check ch = new Check();
-        pole.initPole();
-        pole.showPole();
-        ch.checkAlive(2,2);
+        //pole.currentPole(); 
+        
+        ch.check4();
+         //ch.check3();
+         
     }
 }

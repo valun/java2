@@ -4,11 +4,15 @@
  */
 package game1;
 
-public class Field {
-    
-    
-    boolean field;
-    int x , y ;
+public class Koordinati {
+
+    int x;
+    int y;
+
+    public Koordinati() {
+        this.x = x;
+        this.y = y;
+    }
 
     public int getX() {
         return x;
@@ -25,6 +29,4 @@ public class Field {
     public void setY(int y) {
         this.y = y;
     }
-    
-    
 }
