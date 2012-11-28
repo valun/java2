@@ -14,12 +14,24 @@ public class Game {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Pole pole = new Pole();
         Check ch = new Check();
-        //pole.currentPole(); 
-        
-        ch.check4();
-         //ch.check3();
-         
+        Pole p = new Pole();
+        //Pole p1 = new Pole();
+
+
+
+        p.initPole();
+
+        //for (int i = 0; i < 10; i++) {
+            ch.goPole(p);
+           // ch.p1ToP(p);
+            //p.showPole();
+        //}
+
+
+
+
+        //ch.checkAlive(ch.count);
+
     }
 }
