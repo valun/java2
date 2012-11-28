@@ -16,22 +16,13 @@ public class Game {
     public static void main(String[] args) {
         Check ch = new Check();
         Pole p = new Pole();
-        //Pole p1 = new Pole();
-
-
-
-        p.initPole();
-
-        //for (int i = 0; i < 10; i++) {
+        
+        for (int i = 0; i < 10; i++) {
+            
+            p.initPole();
+            p.showPole();
             ch.goPole(p);
-           // ch.p1ToP(p);
-            //p.showPole();
-        //}
-
-
-
-
-        //ch.checkAlive(ch.count);
-
+            p.showPole();
+        }
     }
 }

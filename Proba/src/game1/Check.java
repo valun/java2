@@ -4,29 +4,25 @@
  */
 package game1;
 
+import java.lang.reflect.Array;
+
 public class Check {
 
-     
-
-    public void init() {
-        // p.initPole();
-    }
+    Pole1 p1 = new Pole1();
 
     public void goPole(Pole p) {
-        
-        
+
         Koordinati k = new Koordinati();
         for (int i = 1; i < p.pole.length; i++) {
             for (int j = 1; j < p.pole.length; j++) {
                 k.setX(i);
                 k.setY(j);
-                check(k, p);
+                counter(k, p);
             }
         }
-        //return p;
     }
 
-    public void check(Koordinati k, Pole p) {
+    public void counter(Koordinati k, Pole p) {
 
         int x, y, i, j;
         i = k.getX();
@@ -41,33 +37,30 @@ public class Check {
                 }
             }
         }
-
         checkAlive(count, k, p);
-
-
     }
 
-    public Pole checkAlive(int count, Koordinati k, Pole p) {
-      Pole p1 = new Pole();
-       p1 = p;
-       System.out.println(k.getX() + " " + k.getY() + " " + count + " $2 было " + p.pole[k.getX()][k.getY()] + " стало " + p1.pole[k.getX()][k.getY()]);
-        p.showPole();
+    public void checkAlive(int count, Koordinati k, Pole p) {
+
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                p1.pole1[i][j] = p.pole[i][j];
+            }
+        }
         if (count == 3) {
-            p1.pole[k.getX()][k.getY()] = true;
+            p1.pole1[k.getX()][k.getY()] = true;
         } else if (count == 2 && p.pole[k.getX()][k.getY()]) {
         } else if ((count > 3 || count < 2) && (p.pole[k.getX()][k.getY()] == true)) {
-            p1.pole[k.getX()][k.getY()] = false;
+            p1.pole1[k.getX()][k.getY()] = false;
         }
-       System.out.println(k.getX() + " " + k.getY() + " " + count + " $2 было " + p.pole[k.getX()][k.getY()] + " стало " + p1.pole[k.getX()][k.getY()]);
-        p1.showPole();
-        
-
-
-
-        return p1;
+        p1ToP(p);
     }
 
-   /* public void p1ToP(Pole p) {
-        p = p1;
-    }*/
+    public void p1ToP(Pole p) {
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                p.pole[i][j] = p1.pole1[i][j];
+            }
+        }
+    }
 }

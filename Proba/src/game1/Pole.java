@@ -7,14 +7,15 @@ package game1;
 public class Pole {
 
     boolean[][] pole = new boolean[10][10];
-
+    
+    
     public void initPole() {
         pole[1][1] = true;
+        pole[1][2] = true;
+        pole[1][3] = true;
         pole[2][1] = true;
         pole[3][1] = true;
         pole[4][1] = true;
-        pole[5][1] = true;
-        pole[6][1] = true;
     }
 
     public void showPole() {
